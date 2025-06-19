@@ -2,7 +2,7 @@
   "name": "Laravel and React Development Environment",
   "dockerComposeFile": "../docker-compose.yml",
   "service": "app",
-  "workspaceFolder": "/workspaces/shiny-journey",
+  "workspaceFolder": "/workspaces/zany-memory",
   "customizations": {
     "vscode": {
       "extensions": [
