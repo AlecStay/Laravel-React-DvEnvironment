@@ -1,8 +1,8 @@
 {
   "name": "Laravel and React Development Environment",
-  "dockerComposeFile": "../docker-compose.yml",
+  "dockerComposeFile": "docker-compose.yml",
   "service": "app",
-  "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+  "workspaceFolder": "/var/www",
   "customizations": {
     "vscode": {
       "extensions": [
@@ -17,10 +17,11 @@
         "msjsdiag.debugger-for-chrome"
       ],
       "settings": {
+        "php.validate.executablePath": "/usr/local/bin/php",
         "terminal.integrated.defaultProfile.linux": "bash"
       }
     }
   },
   "remoteUser": "appuser",
-  "postCreateCommand": "composer install || true && cd frontend && npm install || true"
+  "postCreateCommand": "cd /var/www && composer install || true && cd /var/www/../frontend && npm install || true"
 }
