@@ -2,8 +2,8 @@ FROM node:18
 
 WORKDIR /app
 
-# Creamos el proyecto si no existe
-RUN [ ! -f "package.json" ] && npx create-react-app . || echo "React app already exists"
+# Instalar las dependencias del proyecto React
+RUN npm install
 
 EXPOSE 3000
 

@@ -29,5 +29,5 @@
     }
   },
   "remoteUser": "appuser",
-  "postCreateCommand": "composer install --working-dir=/workspaces/Laravel-React-DvEnvironment/laravel && npm install --prefix /workspaces/Laravel-React-DvEnvironment/.devcontainer/frontend && php /workspaces/Laravel-React-DvEnvironment/laravel/artisan key:generate || true"
+  "postCreateCommand": "composer install --working-dir=/var/www && php /var/www/artisan key:generate || true"
 }
