@@ -19,4 +19,4 @@ EXPOSE 3000
 
 # PASO 4: Define el comando de inicio de la aplicación.
 # Usa "/bin/sh -c" para mayor compatibilidad con la resolución del PATH de 'npm'.
-CMD ["/bin/sh", "-c", "npm start"]
+CMD ["/bin/sh", "-c", "npm start"]  
