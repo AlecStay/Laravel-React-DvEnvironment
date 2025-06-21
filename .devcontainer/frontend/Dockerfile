@@ -7,4 +7,9 @@ RUN npm install
 
 EXPOSE 3000
 
-CMD ["/bin/sh", "-c", "npm start"]
+COPY package*.json ./
+RUN npm install
+
+COPY . .
+
+CMD ["npm", "start"]
