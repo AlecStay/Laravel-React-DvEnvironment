@@ -30,6 +30,6 @@
     }
   },
   "remoteUser": "appuser",
-  "postCreateCommand": "composer install --working-dir=/var/www && php /var/www/artisan key:generate && chmod -R 777 /var/www/storage /var/www/bootstrap/cache || true",
+  "postCreateCommand": "php /var/www/artisan key:generate && chmod -R 777 /var/www/storage /var/www/bootstrap/cache || true",
   "postStartCommand": "docker exec react_app bash -c 'cd /app && npm install'"
 }
