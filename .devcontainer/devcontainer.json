@@ -3,6 +3,7 @@
   "dockerComposeFile": "docker-compose.yml",
   "service": "app",
   "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+  "runServices": ["app", "react-app", "postgres", "pgadmin"],
   "forwardPorts": [
     8000,
     8080,
