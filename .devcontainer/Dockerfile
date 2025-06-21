@@ -30,28 +30,16 @@ RUN docker-php-ext-install \
     xml
 
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
-
 ARG UID=1000
 ARG GID=1000
 RUN groupadd -g ${GID} appuser && \
     useradd -u ${UID} -g appuser -m appuser
-
 USER appuser
-
 RUN mkdir -p /var/www
 WORKDIR /var/www
-
-# --- ¡LÍNEAS DE COPIA CORREGIDAS PARA EL NUEVO CONTEXTO! ---
-# Ahora 'laravel/' es relativo a la raíz del repositorio (donde está el nuevo contexto de build).
 COPY laravel/composer.json laravel/composer.lock ./
-
 RUN composer install --no-dev --optimize-autoloader --no-scripts
-
-# Copiar el RESTO del CONTENIDO de la carpeta 'laravel' a /var/www.
 COPY laravel/. /var/www
-
 RUN chmod -R 777 storage bootstrap/cache
-
 EXPOSE 8000
-
 CMD ["php", "artisan", "serve", "--host=0.0.0.0", "--port=8000"]
